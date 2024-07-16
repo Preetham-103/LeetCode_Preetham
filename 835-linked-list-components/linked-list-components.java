@@ -10,24 +10,24 @@
  */
 class Solution {
     public int numComponents(ListNode head, int[] nums) {
-        if(head.next == null && nums.length == 0)
+        if(head == null || nums.length == 0)
         {
             return 1;
         }
-        
-        HashMap<Integer,Integer> hash = new HashMap<>();
 
         int count = nums.length;
+        ListNode curr = head;
         boolean flag = false;
 
-        for(int i:nums)
+        HashSet<Integer> set = new HashSet<Integer>();
+        for(int i : nums)
         {
-            hash.put(i,null);
+            set.add(i);
         }
 
-        while(head != null)
+        while(curr != null)
         {
-            if(hash.containsKey(head.val))
+            if(set.contains(curr.val))
             {
                 if(flag)
                 {
@@ -42,7 +42,7 @@ class Solution {
             {
                 flag = false;
             }
-            head = head.next;
+            curr = curr.next;
         }
         return count;
     }
