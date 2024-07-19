@@ -2,9 +2,9 @@ class Solution {
     public boolean canJump(int[] nums) {
         int jump = 0;
 
-        // int i=0;
+        int i=0;
 
-        for(int i=0; i<nums.length;i++)
+        while(i <= nums.length)
         {
             if(i > jump)
             {
@@ -17,7 +17,7 @@ class Solution {
             {
                 return true;
             }
-            // i++;
+            i++;
         }
         return false;
     }
