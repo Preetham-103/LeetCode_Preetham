@@ -29,16 +29,6 @@ class Solution {
                 count++;
             }
         }
-
-        // if(count > (nums.length/2))
-        // {
-        //     return candidate;
-        // } 
-        // else
-        // {
-        //     return -1;
-        // }
-
         return (count > (nums.length/2)) ? candidate : -1;
     }
 }
